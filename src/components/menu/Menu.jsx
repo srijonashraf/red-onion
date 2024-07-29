@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import MenuTab from "./../shared/menu-tab/MenuTab";
 import { MenuTabContext } from "../../context/MenuTabContext";
 import { Breakfast, Dinner, Lunch } from "../../data/menuList";
+import { ItemDetailsContext } from "../../context/ItemDetailsContext";
 
 const Menu = () => {
   const { menuType } = useContext(MenuTabContext);
+  const { setItemDetails } = useContext(ItemDetailsContext);
   const navigate = useNavigate();
 
   let menuList;
@@ -17,6 +19,11 @@ const Menu = () => {
   } else {
     menuList = Dinner;
   }
+
+  const handleClick = (item) => {
+    setItemDetails(item);
+    navigate("/details");
+  };
 
   return (
     <motion.div
@@ -33,7 +40,7 @@ const Menu = () => {
         <ul className="grid grid-cols-12 md:gap-5 justify-items-center">
           {menuList?.map((item, index) => (
             <li
-              onClick={() => navigate("/details")}
+              onClick={() => handleClick(item)}
               key={index.toString()}
               className="col-span-12 md:col-span-4 p-3 hover:shadow-lg transition-all 
               flex flex-col w-48 gap-4 cursor-pointer"
