@@ -1,26 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { MenuTabContext } from "../../../context/MenuTabContext";
 
 const MenuTab = () => {
-  const [activeTab, setActiveTab] = useState("Lunch");
+  const { menuType, setMenuType } = useContext(MenuTabContext);
   return (
     <div className="my-10">
       <ul className="menu-tab flex items-center gap-5 justify-center font-inter font-medium text-sm">
         <li
-          className={`menu-item ${activeTab === "Breakfast" ? "active" : ""}`}
-          onClick={() => setActiveTab("Breakfast")}
+          className={`menu-item ${menuType === "Breakfast" ? "active" : ""}`}
+          onClick={() => setMenuType("Breakfast")}
         >
           <NavLink to={`/`}>Breakfast</NavLink>
         </li>
         <li
-          className={`menu-item ${activeTab === "Lunch" ? "active" : ""}`}
-          onClick={() => setActiveTab("Lunch")}
+          className={`menu-item ${menuType === "Lunch" ? "active" : ""}`}
+          onClick={() => setMenuType("Lunch")}
         >
           <NavLink to={`/`}>Lunch</NavLink>
         </li>
         <li
-          className={`menu-item ${activeTab === "Dinner" ? "active" : ""}`}
-          onClick={() => setActiveTab("Dinner")}
+          className={`menu-item ${menuType === "Dinner" ? "active" : ""}`}
+          onClick={() => setMenuType("Dinner")}
         >
           <NavLink to={`/`}>Dinner</NavLink>
         </li>

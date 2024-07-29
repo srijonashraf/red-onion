@@ -1,86 +1,22 @@
-import React, { useState } from "react";
-import foodPlate from "../../assets/image/dinner1.png";
+import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import MenuTab from "./../shared/menu-tab/MenuTab";
+import { MenuTabContext } from "../../context/MenuTabContext";
+import { Breakfast, Dinner, Lunch } from "../../data/menuList";
 
 const Menu = () => {
-  const menus = [
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-    {
-      thumbnail: foodPlate,
-      title: "Fried Chicken Rice",
-      description: "Chicken are well cooked",
-      price: 9.99,
-    },
-  ];
-
+  const { menuType } = useContext(MenuTabContext);
   const navigate = useNavigate();
+
+  let menuList;
+  if (menuType === "Breakfast") {
+    menuList = Breakfast;
+  } else if (menuType === "Lunch") {
+    menuList = Lunch;
+  } else {
+    menuList = Dinner;
+  }
 
   return (
     <motion.div
@@ -95,7 +31,7 @@ const Menu = () => {
       <MenuTab />
       <section className="w-3/4">
         <ul className="grid grid-cols-12 md:gap-5 justify-items-center">
-          {menus?.map((item, index) => (
+          {menuList?.map((item, index) => (
             <li
               onClick={() => navigate("/details")}
               key={index.toString()}
