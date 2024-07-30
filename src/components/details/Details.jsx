@@ -224,6 +224,7 @@ const Details = () => {
                   src={item}
                   alt=""
                   className="rounded-full object-contain w-16 cursor-pointer"
+onClick={() => handleSliderImageClick(item)}
                 />
               ))}
 
