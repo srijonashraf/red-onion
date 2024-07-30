@@ -67,6 +67,7 @@ const Details = () => {
           duration: 0.5,
           delay: 0.2,
         }}
+        viewport={{ once: true }}
         className="w-3/4 grid grid-cols-6 gap-8 items-center mx-auto my-10"
       >
         <div className="flex flex-col gap-5 col-span-6 md:col-span-3 w-full">

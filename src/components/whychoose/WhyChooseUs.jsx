@@ -39,6 +39,7 @@ const WhyChooseUs = () => {
         duration: 0.5,
         delay: 0.2,
       }}
+      viewport={{ once: true }}
       className="container mx-auto px-5 mb-10"
     >
       <section>

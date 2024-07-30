@@ -33,6 +33,7 @@ const Menu = () => {
         duration: 0.5,
         delay: 0.2,
       }}
+      viewport={{ once: true }}
       className="flex flex-col items-center"
     >
       <MenuTab />
