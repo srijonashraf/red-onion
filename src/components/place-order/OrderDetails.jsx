@@ -20,7 +20,7 @@ const OrderDetails = () => {
   ];
   return (
     <div className="w-full">
-      <div className="flex flex-col gap-2 w-3/4 mx-auto">
+      <div className="flex flex-col gap-2 w-3/4 mx-auto max-md:w-[90%]">
         <p>
           From <span className="font-medium">Gulshan Plaza Restaurant GPR</span>
         </p>

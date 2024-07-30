@@ -7,7 +7,10 @@ const PlaceOrderPage = () => {
   return (
     <>
       <MenuTab />
-      <div className="container h-screen mx-auto max-md:flex-col flex gap-5 items-center w-full">
+      <div
+        className="container h-[85vh] max-md:h-auto max-md:mb-10 mx-auto 
+        flex max-md:flex-col gap-5 max-md:gap-10 items-center w-full "
+      >
         <DeliveryDetails />
         <OrderDetails />
       </div>
