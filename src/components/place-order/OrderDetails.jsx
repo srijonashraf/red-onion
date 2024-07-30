@@ -1,5 +1,6 @@
 import React from "react";
 import foodImage from "../../assets/image/dinner1.png";
+import { useNavigate } from "react-router-dom";
 
 const OrderDetails = () => {
   const orders = [
@@ -18,6 +19,8 @@ const OrderDetails = () => {
       quantity: "04",
     },
   ];
+
+  const navigate = useNavigate();
   return (
     <div className="w-full">
       <div className="flex flex-col gap-2 w-3/4 mx-auto max-md:w-[90%]">
@@ -80,7 +83,10 @@ const OrderDetails = () => {
             </p>
           </div>
         </div>
-        <button className="bg-red-500 hover:bg-red-500/80 py-2 rounded-md text-white text-sm">
+        <button
+          onClick={() => navigate("/orderComplete")}
+          className="bg-red-500 hover:bg-red-500/80 py-2 rounded-md text-white text-sm"
+        >
           Place Order
         </button>
       </div>

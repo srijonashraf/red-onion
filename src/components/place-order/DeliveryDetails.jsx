@@ -37,7 +37,7 @@ const DeliveryDetails = () => {
           placeholder="Delivery Instructions"
         ></textarea>
 
-        <button className="bg-red-500 py-2 text-gray-100 rounded-md hover:bg-red-500/80 text-sm">
+        <button className="bg-red-500 py-2 text-white rounded-md hover:bg-red-500/80 text-sm">
           Save and Continue
         </button>
       </form>
