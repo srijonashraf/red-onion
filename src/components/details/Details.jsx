@@ -224,7 +224,7 @@ const Details = () => {
                   src={item}
                   alt=""
                   className="rounded-full object-contain w-16 cursor-pointer"
-onClick={() => handleSliderImageClick(item)}
+                  onClick={() => handleSliderImageClick(item)}
                 />
               ))}
 
@@ -281,7 +281,10 @@ onClick={() => handleSliderImageClick(item)}
                   +
                 </button>
               </div>
-              <button className="outline-none bg-red-500 text-white text-base font-inter flex self-start gap-2 px-6 py-2 rounded-full hover:bg-red-500/80">
+              <button
+                onClick={() => navigate("/placeOrder")}
+                className="outline-none bg-red-500 text-white text-base font-inter flex self-start gap-2 px-6 py-2 rounded-full hover:bg-red-500/80"
+              >
                 Add
               </button>
             </div>
